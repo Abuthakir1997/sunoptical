@@ -1,0 +1,23 @@
+.Banner{
+    text-align: center;
+    width: 100%;
+    padding: 300px 0;
+    background: #000;
+    animation: color-animate 9s linear infinite;
+}
+.Banner img{
+    width: 500px;
+    max-width: 500px;
+}
+
+@keyframes color-animate {
+    0%{
+        background: linear-gradient(0deg, #0a0a0a, #750000);
+    }
+    20%{
+        background: linear-gradient(0deg, #560b49, #423e00);
+    }
+    40%{
+        background: linear-gradient(0deg, #470000, #470038);
+    }
+}

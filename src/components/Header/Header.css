@@ -1,0 +1,45 @@
+.Header{
+    display: flex;
+    background: #000;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+}
+.Header img{
+    justify-content: left;
+    width: 100px;
+    max-width: 200px;
+    margin-left: 20px;
+    animation: logo-rotation 10s infinite linear;
+}
+
+.Header h1{
+    font-weight: 700;
+    margin: 21px 0 0 54px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.979), rgba(255, 8, 8, 0.904)); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    position: absolute;
+
+}
+
+.Header span{
+    font-size: 50px;
+}
+
+.Header .right-links ul{
+    display: flex;
+    list-style: none;
+    color: #fff;
+    justify-content: space-between;
+}
+
+
+@keyframes logo-rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
