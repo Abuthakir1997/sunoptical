@@ -43,3 +43,20 @@
         transform: rotate(360deg);
     }
 }
+
+
+/* media queries */
+
+@media (max-width: 575px){
+    .Header{
+        justify-content: center;
+    }
+    .Header img{
+        margin: 0;
+        width: 135px;
+    }
+    .Header h1{
+        margin: 32px 0 0 30px;
+    }
+}
+

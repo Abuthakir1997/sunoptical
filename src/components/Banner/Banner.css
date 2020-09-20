@@ -4,10 +4,27 @@
     padding: 300px 0;
     background: #000;
     animation: color-animate 9s linear infinite;
+
 }
-.Banner img{
+.Banner .frame-logo{
     width: 500px;
     max-width: 500px;
+}
+
+.overlay{
+    position: absolute;
+    background-color: rgba(255,255,255,0.5);
+    width: 800px;
+    height: 500px;
+    max-width: 1000px;
+    top: 50%;
+    left: 18%;
+    z-index: 100;
+}
+.overlay .carousel{
+    position: absolute;
+    top: 10%;
+
 }
 
 @keyframes color-animate {
@@ -19,5 +36,47 @@
     }
     40%{
         background: linear-gradient(0deg, #470000, #470038);
+    }
+}
+
+
+/* media queries */
+
+@media(max-width:1024px){
+    .overlay{
+        width: 861px;
+        height: 433px;
+        max-width: 680px;
+    }
+}
+@media (max-width:768px){
+    .Banner img{
+        max-width: 350px;
+    }
+    .Banner{
+        animation: none;
+    }
+    .overlay{
+        max-width: 468px;
+        height: 500px;
+    }
+    .overlay .carousel{
+        display: none;
+    }
+}
+
+@media (max-width: 575px){
+    .Banner img{
+        max-width: 320px;
+    }
+    .overlay{
+        display: none;
+    }
+    .Banner .frame-logo {
+        width: 500px;
+        max-width: 300px;
+    }
+    .Banner .overlay .carousel{
+        display: none;
     }
 }
