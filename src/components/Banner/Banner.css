@@ -57,11 +57,16 @@
         animation: none;
     }
     .overlay{
+        border-radius: 20px;
         max-width: 468px;
-        height: 500px;
+        height: 360px;
+        box-shadow: 0 0px 17px 15px red;
     }
     .overlay .carousel{
         display: none;
+    }
+    .overlay:hover{
+        box-shadow: 2px 2px 2px #fff;
     }
 }
 
