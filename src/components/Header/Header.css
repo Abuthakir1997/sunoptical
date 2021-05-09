@@ -1,0 +1,83 @@
+.header__navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  padding: 20px;
+  z-index: 2;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0f0f0f), color-stop(50%, #223c6c));
+  background-image: linear-gradient(90deg, #0f0f0f 0%, #223c6c 50%);
+  -webkit-transition: padding 400ms ease;
+  transition: padding 400ms ease;
+}
+
+.header__navbar .logo-name {
+  position: relative;
+  font-size: 24px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+  left: -55px;
+}
+
+.header__logo img {
+  width: 100px;
+  max-width: 200px;
+  margin-left: 20px;
+  -webkit-animation: logo-rotation 10s infinite linear;
+          animation: logo-rotation 10s infinite linear;
+  -webkit-transition: -webkit-transform 400ms ease;
+  transition: -webkit-transform 400ms ease;
+  transition: transform 400ms ease;
+  transition: transform 400ms ease, -webkit-transform 400ms ease;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.header__menu__items {
+  margin: 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header__menu.move {
+  -webkit-transform: translateX(-180px);
+          transform: translateX(-180px);
+}
+
+@-webkit-keyframes logo-rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=Header.css.map */

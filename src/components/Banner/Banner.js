@@ -4,6 +4,9 @@ import './Banner.scss';
 const Banner = () => {
     return (
         <div className="Banner">
+            <div className="overlay-banner">
+                {/* <img className="w-50 h-100" src={require("../../asserts/frames-images/night-driving.jpg")} alt="frame-1" /> */}
+            </div>
             <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
