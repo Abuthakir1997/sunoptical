@@ -12,6 +12,7 @@
                 transform: scale(0.6);
             }
         }
+        
 
 }
 .Banner .frame-logo{
@@ -57,6 +58,12 @@
     }
 }
 
-@media (max-width: 575px){
-   
-}
+// @media (max-width: 575px){
+//     .carousel-item{
+//         &:last-child{
+//             img{
+//                 height: auto;
+//             }
+//         }
+//     }
+// }

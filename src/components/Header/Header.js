@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.scss';
 
-const header = () => {
+const header = (props) => {
 
     //shrinking navbar
     function onScroll() {
@@ -14,14 +14,12 @@ const header = () => {
         if (scrollOffset > 20) {
             menu.classList.add("move");
             logo.classList.add("d-none");
-            navbar.style.padding = "0";
             navbar.style.backgroundImage = "linear-gradient(90deg, rgb(149 163 189) 0%, rgb(15, 15, 15) 50%)";
             logoImage.style.transform = "scale(0.8)";
         }
         else {
             menu.classList.remove("move");
             logo.classList.remove("d-none");
-            navbar.style.padding = "20px";
             navbar.style.backgroundImage = "linear-gradient(90deg, #0f0f0f 0%, #223c6c 50%)";
             logoImage.style.transform = "scale(1)";
         }
@@ -39,6 +37,7 @@ const header = () => {
                     <div className="header__menu__items">Home</div>
                     <div className="header__menu__items">Frames</div>
                     <div className="header__menu__items">Sunglasses</div>
+                    <div className="header__menu__items" onClick={props.clicked}>Galleries</div>
                     <div className="header__menu__items"></div>
                 </div>
             </div>
