@@ -4,11 +4,14 @@ import Header from './components/Header/Header';
 import Banner from './components/Banner/Banner';
 import Footer from './components/Footer/Footer';
 import Backdrop from './components/Backdrop/Backdrop';
+import Sidedrawer from "./components/SideDrawer/sidedrawer";
 
 class App extends Component {
   state = {
     backdropdisplay: false,
-    type: ""
+    type: "",
+    showsidedrawer: false,
+    sidebackdropdisplay: false,
   }
 
   showingTrueHandler = (e) => {
@@ -36,13 +39,28 @@ class App extends Component {
   }
   showingFalseHandler = () => {
     this.setState({
-      backdropdisplay: false
+      backdropdisplay: false,
     })
   }
+  notshowingSidedrawer = (e) => {
+    this.setState({
+      showsidedrawer: false,
+      sidebackdropdisplay: false,
+    });
+
+  }
+  showingSidedrawer = (e) => {
+    this.setState({
+      showsidedrawer: true,
+      sidebackdropdisplay: true
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <Header clicked={(e) => this.showingTrueHandler(e)}></Header>
+        <Sidedrawer clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={this.state.showsidedrawer} show={this.state.sidebackdropdisplay}></Sidedrawer>
+        <Header clicked={(e) => this.showingTrueHandler(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)}></Header>
         <Banner></Banner>
         <Footer></Footer>
         <Backdrop type={this.state.type} clicked={this.showingFalseHandler} show={this.state.backdropdisplay}></Backdrop>

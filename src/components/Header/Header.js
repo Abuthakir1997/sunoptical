@@ -40,8 +40,8 @@ const header = (props) => {
                     <div className="header__menu__items" onClick={props.clicked}>Galleries</div>
                     <div className="header__menu__items"></div>
                 </div>
-                <div className="toggle ml-auto mr-3 p-4 d-sm-block d-md-none">
-                    <span><i class="fa fa-bars"></i></span>
+                <div className="toggle ml-auto mr-3 p-4 d-sm-block d-md-none" onClick={props.showingsidedrawer}>
+                    <span><i className="fa fa-bars"></i></span>
                 </div>
             </div>
         </div>

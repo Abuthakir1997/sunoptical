@@ -3,7 +3,7 @@
     height: 100%;
     position: fixed;
     top: 0;
-    z-index: 3;
+    z-index: 8;
     background: rgba(0,0,0,0.9);
     transition: all 0.5s ease;
     padding: 50px 10px;   
@@ -16,12 +16,12 @@
         top: 0;
         cursor: pointer;
         font-size: 40px;
-        z-index: 6; 
+        z-index: 9; 
 }
 .sunglasses-row{
     position: absolute;
     top: 0;
-    z-index: 5;
+    z-index: 8;
     margin: 30px 30px;
     img{
         width: 100%;
@@ -37,7 +37,7 @@
 .frames-row{
     position: absolute;
     top: 0;
-    z-index: 5;
+    z-index: 8;
     margin: 30px 30px;
     img{
         width: 100%;
