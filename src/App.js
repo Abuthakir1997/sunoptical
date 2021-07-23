@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import Header from './components/Header/Header';
 import Banner from './components/Banner/Banner';
 import Footer from './components/Footer/Footer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Sidedrawer from "./components/SideDrawer/sidedrawer";
+import SimpleSlider from './components/Slider/SimpleSlider';
 
 class App extends Component {
   state = {
@@ -13,7 +14,6 @@ class App extends Component {
     showsidedrawer: false,
     sidebackdropdisplay: false,
   }
-
   showingTrueHandler = (e) => {
     console.log(e.target.textContent);
     var text = e.target.textContent;
@@ -55,8 +55,11 @@ class App extends Component {
       sidebackdropdisplay: true
     });
   }
+  componentDidMount() {
 
+  }
   render() {
+
     return (
       <div className="App">
         <Sidedrawer clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={this.state.showsidedrawer} show={this.state.sidebackdropdisplay}></Sidedrawer>
@@ -64,6 +67,7 @@ class App extends Component {
         <Banner></Banner>
         <Footer></Footer>
         <Backdrop type={this.state.type} clicked={this.showingFalseHandler} show={this.state.backdropdisplay}></Backdrop>
+        <SimpleSlider></SimpleSlider>
       </div>
     )
   }
