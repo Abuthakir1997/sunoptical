@@ -1,26 +1,24 @@
 import React from 'react';
 import './Banner.scss';
-
 const Banner = () => {
+    const array = ["2", "3", "4", "5"];
+    const images = array.map(image => {
+        return (
+            <div className="carousel-item">
+                <img className="d-block slide-img w-100" src={require(`../Banner/Banner-images/slideimage-${image}.jpg`)} alt="First slide" />
+            </div>
+        )
+    })
     return (
         <div className="Banner">
             <div className="overlay-banner">
-                {/* <img className="w-50 h-100" src={require("../../asserts/frames-images/night-driving.jpg")} alt="frame-1" /> */}
             </div>
-            <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+            <div id="carouselExampleControls" className="carousel slide" data-ride="">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img className="d-block w-100" src={require("../Banner/Banner-images/essilor.jpg")} alt="First slide" />
+                        <img className="d-block slide-img w-100" src={require(`../Banner/Banner-images/slideimage-1.jpg`)} alt="First slide" />
                     </div>
-                    <div className="carousel-item">
-                        <img className="d-block w-100" src={require("../Banner/Banner-images/contact-lens.jpg")} alt="Second slide" />
-                    </div>
-                    <div className="carousel-item">
-                        <img className="d-block w-100" src={require("../Banner/Banner-images/eyecheckup-1.jpg")} alt="Second slide" />
-                    </div>
-                    <div className="carousel-item">
-                        <img className="d-block w-100" src={require("../Banner/Banner-images/fastrack.jpg")} alt="Second slide" />
-                    </div>
+                    {images}
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>

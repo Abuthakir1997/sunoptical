@@ -21,13 +21,28 @@ const backdrop = (props) => {
         case ("Frames"): {
             rows = (<div id="frames" className="row frames-row">
                 <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/frames-tr.jpg")} alt="header-logo" />
+                    <img src={require("../../asserts/frames-images/frames-tr.jpg")} alt="frames" />
                 </div>
                 <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/rimless.jpg")} alt="header-logo" />
+                    <img src={require("../../asserts/frames-images/frames-tr-1.jpg")} alt="frames" />
                 </div>
                 <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/night-driving.jpg")} alt="header-logo" />
+                    <img src={require("../../asserts/frames-images/frames-tr-2.jpg")} alt="frames" />
+                </div>
+                <div className="col-12 col-md-4 mb-3">
+                    <img src={require("../../asserts/frames-images/rimless.jpg")} alt="frames" />
+                </div>
+                <div className="col-12 col-md-4 mb-3">
+                    <img src={require("../../asserts/frames-images/rimless-1.jpg")} alt="frames" />
+                </div>
+                <div className="col-12 col-md-4 mb-3">
+                    <img src={require("../../asserts/frames-images/supra-1.jpg")} alt="frames" />
+                </div>
+                <div className="col-12 col-md-4 mb-3">
+                    <img src={require("../../asserts/frames-images/supra-2.jpg")} alt="frames" />
+                </div>
+                <div className="col-12 col-md-4 mb-3">
+                    <img src={require("../../asserts/frames-images/fullframe.jpg")} alt="frames" />
                 </div>
             </div>);
             break;
