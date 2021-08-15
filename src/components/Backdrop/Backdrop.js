@@ -3,47 +3,26 @@ import './Backdrop.scss';
 
 const backdrop = (props) => {
     let rows = null;
+    var arr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
+    let frames = arr.map(framesImages => {
+        return (
+            <div className="col-12 col-md-4 mb-3">
+                <img src={require(`../../asserts/frames-images/frames-${framesImages}.jpg`)} alt="frames" />
+            </div>
+        )
+    })
     switch (props.type) {
         case ("Sunglasses"): {
             rows = (<div id="sunGlasses" className="row sunglasses-row">
                 <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/mercury.jpg")} alt="header-logo" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/night-driving.jpg")} alt="header-logo" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/night-driving.jpg")} alt="header-logo" />
+                    <img src={require("../../asserts/sunglasses-images/sun-glasses-1.jpg")} alt="header-logo" />
                 </div>
             </div>)
             break;
         }
         case ("Frames"): {
             rows = (<div id="frames" className="row frames-row">
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/frames-tr.jpg")} alt="frames" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/frames-tr-1.jpg")} alt="frames" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/frames-tr-2.jpg")} alt="frames" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/rimless.jpg")} alt="frames" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/rimless-1.jpg")} alt="frames" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/supra-1.jpg")} alt="frames" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/supra-2.jpg")} alt="frames" />
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/frames-images/fullframe.jpg")} alt="frames" />
-                </div>
+                {frames}
             </div>);
             break;
         }

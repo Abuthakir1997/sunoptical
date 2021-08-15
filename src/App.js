@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Backdrop from './components/Backdrop/Backdrop';
 import Sidedrawer from "./components/SideDrawer/sidedrawer";
 import SimpleSlider from './components/Slider/SimpleSlider';
+import SliderFooter from "./components/SliderFooter/sliderfooter";
 
 class App extends Component {
   state = {
@@ -68,6 +69,7 @@ class App extends Component {
         <Footer></Footer>
         <Backdrop type={this.state.type} clicked={this.showingFalseHandler} show={this.state.backdropdisplay}></Backdrop>
         <SimpleSlider></SimpleSlider>
+        <SliderFooter></SliderFooter>
       </div>
     )
   }

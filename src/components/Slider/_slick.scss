@@ -1,9 +1,11 @@
 /* Slider */
 .parent-slider{
-    padding: 30px 30px;
+    padding: 30px;
     overflow: hidden;
-    //background-image: linear-gradient( 90deg, rgb(15, 15, 15) 0%, rgb(34, 60, 108) 50%);
-    background: #000;
+    background-image: linear-gradient(
+90deg
+, #0f0f0f 0%, #0e2145 50%);
+    //background: #000;
 }
 .new-arrival-images-section{
     padding: 10px;
