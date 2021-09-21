@@ -5,7 +5,7 @@ const Banner = () => {
     const images = array.map(image => {
         return (
             <div className="carousel-item">
-                <img className="d-block slide-img w-100" src={require(`../Banner/Banner-images/slideimage-${image}.jpg`)} alt="First slide" />
+                <img key={`${image}`} className="d-block slide-img w-100" src={require(`../Banner/Banner-images/slideimage-${image}.jpg`)} alt="First slide" />
             </div>
         )
     })

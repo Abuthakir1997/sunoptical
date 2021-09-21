@@ -3,11 +3,11 @@ import './Backdrop.scss';
 
 const backdrop = (props) => {
     let rows = null;
-    var arr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
+    var arr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
     let frames = arr.map(framesImages => {
         return (
             <div className="col-12 col-md-4 mb-3">
-                <img src={require(`../../asserts/frames-images/frames-${framesImages}.jpg`)} alt="frames" />
+                <img key={`${framesImages}`} src={require(`../../asserts/frames-images/frames-${framesImages}.jpg`)} alt="frames" />
             </div>
         )
     })
