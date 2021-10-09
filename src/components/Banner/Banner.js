@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.scss';
-const Banner = () => {
+const Banner = (props) => {
     const array = ["2", "3", "4", "5"];
     const images = array.map(image => {
         return (
@@ -10,10 +10,10 @@ const Banner = () => {
         )
     })
     return (
-        <div className="Banner">
+        <div className={`Banner ${props.show ? "d-none" : ""}`} >
             <div className="overlay-banner">
             </div>
-            <div id="carouselExampleControls" className="carousel slide" data-ride="">
+            <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img className="d-block slide-img w-100" src={require(`../Banner/Banner-images/slideimage-1.jpg`)} alt="First slide" />
@@ -29,7 +29,7 @@ const Banner = () => {
                     <span className="sr-only">Next</span>
                 </a>
             </div>
-        </div>
+        </div >
     )
 }
 
