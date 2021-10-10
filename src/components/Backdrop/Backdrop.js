@@ -5,13 +5,19 @@ import Pagination from '../Pagination/pagination';
 import './Backdrop.scss';
 
 const backdrop = (props) => {
+    const array = ["1", "2"];
+    const images = array.map((images) => {
+        return (
+            <div className="col-12 col-md-4 mb-3">
+                <img src={require(`../../asserts/sunglasses-images/sun-glasses-${images}.jpg`)} alt="header-logo" />
+            </div>
+        )
+    });
     let rows = null;
     switch (props.type) {
         case ("Sunglasses"): {
             rows = (<div id="sunGlasses" className="row sunglasses-row">
-                <div className="col-12 col-md-4 mb-3">
-                    <img src={require("../../asserts/sunglasses-images/sun-glasses-1.jpg")} alt="header-logo" />
-                </div>
+                {images}
             </div>)
             break;
         }
