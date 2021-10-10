@@ -1,9 +1,9 @@
 .frames-row{
     .frames-image-collections{
-    height: calc(100% - 50px);
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    margin: 45px 0;
     }
 
     #pageNumbers{
@@ -27,7 +27,7 @@
     border-radius: 50%;
     cursor: pointer;
     &.active{
-        background: blue;
+        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);      
     }
     }
     }
