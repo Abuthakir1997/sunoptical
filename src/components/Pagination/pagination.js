@@ -44,7 +44,7 @@ class Pagination extends React.Component {
                     id={number}
                     onClick={this.handleClick}
                     className={(this.state.currentPage === number ? 'active ' : '')}
-
+                //style={( transitonthis.state.currentPage === number ? 'active ' : '')}
                 >
                     {number}
                 </li >
@@ -53,7 +53,7 @@ class Pagination extends React.Component {
 
         return (
             <div>
-                <div className={this.props.show ? "frames-image-collections" : ""}>
+                <div className={this.props.show ? "frames-image-collections" : ""} style={{ transform: this.props.show ? "translateY(0)" : "translateY(-102%)", transition: this.props.show ? "transform transform 0.6s ease" : "" }}>
                     {renderTodos}
                 </div>
                 <ul id="pageNumbers">
