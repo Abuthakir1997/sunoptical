@@ -1,0 +1,62 @@
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  padding: 0;
+}
+
+.sunglasses-section span {
+  color: red;
+  position: fixed;
+  right: 5px;
+  top: 0;
+  cursor: pointer;
+  font-size: 40px;
+  z-index: 9;
+}
+
+.sunglasses-section .sunglasses-row {
+  position: absolute;
+  top: 0;
+  z-index: 8;
+  margin: 30px 30px;
+}
+
+.sunglasses-section .sunglasses-row img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.sunglasses-section .sunglasses-row > .col-4 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 10px;
+}
+
+.sunglasses-section .frames-row {
+  position: absolute;
+  top: 0;
+  z-index: 8;
+  margin: 0px 25px;
+}
+
+.sunglasses-section .frames-row img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.sunglasses-section .frames-row > .col-4 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=Backdrop.css.map */

@@ -1,0 +1,12 @@
+.side-back-drop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 6;
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  padding: 50px 10px;
+}
+/*# sourceMappingURL=sidebackdrop.css.map */

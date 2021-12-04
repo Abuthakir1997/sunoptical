@@ -22,6 +22,21 @@
   left: -55px;
 }
 
+@media (max-width: 575px) {
+  .header__navbar .logo-name {
+    font-size: 20px;
+  }
+}
+
+.header__navbar .toggle {
+  cursor: pointer;
+}
+
+.header__navbar .toggle span {
+  color: #fff;
+  font-size: 25px;
+}
+
 .header__logo img {
   width: 100px;
   max-width: 200px;
@@ -44,13 +59,28 @@
   transition: transform 1s ease, -webkit-transform 1s ease;
 }
 
-.header__menu__items {
+.header__menu__items__home, .header__menu__items__frames, .header__menu__items__sunglasses, .header__menu__items__galleries {
   margin: 15px;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
+}
+
+.header__menu__items__home:hover, .header__menu__items__frames:hover, .header__menu__items__sunglasses:hover, .header__menu__items__galleries:hover {
+  color: red;
+  color: red;
+  -webkit-transform: scaleX(1.2) scaleY(1.5);
+          transform: scaleX(1.2) scaleY(1.5);
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+  -webkit-transition: -webkit-transform 0;
+  transition: -webkit-transform 0;
+  transition: transform 0;
+  transition: transform 0, -webkit-transform 0;
 }
 
 .header__menu.move {
@@ -77,6 +107,21 @@
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 575px) {
+  .header__navbar {
+    position: relative;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header__menu {
+    display: none;
   }
 }
 /*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,kBAAe;EAC3B,UAAU,EAAE,aAAa;EACzB,OAAO,EAAE,SAAS;CACrB",
+    "sources": [
+        "sidebackdrop.scss"
+    ],
+    "names": [],
+    "file": "sidebackdrop.css"
+}

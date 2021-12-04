@@ -4,7 +4,7 @@ class Pagination extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pictures: ['frames-1.jpg', 'frames-2.jpg', 'frames-3.jpg', 'frames-4.jpg', 'frames-5.jpg', 'frames-6.jpg', 'frames-7.jpg', 'frames-8.jpg', 'frames-9.jpg', 'frames-10.jpg', 'frames-11.jpg', 'frames-12.jpg', 'frames-13.jpg', 'frames-14.jpg'],
+            pictures: ['frames-1.jpg', 'frames-2.jpg', 'frames-3.jpg', 'frames-4.jpg', 'frames-5.jpg', 'frames-6.jpg', 'frames-7.jpg', 'frames-8.jpg', 'frames-9.jpg', 'frames-10.jpg', 'frames-11.jpg', 'frames-12.jpg', 'frames-13.jpg', 'frames-14.jpg', 'frames-15.jpg', 'frames-16.jpg', 'frames-17.jpg', 'frames-18.jpg'],
             currentPage: 1,
             todosPerPage: 6,
         };
