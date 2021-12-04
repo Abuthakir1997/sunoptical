@@ -27,7 +27,7 @@ const header = (props) => {
 
     window.addEventListener("scroll", onScroll);
     return (
-        <div className={`header ${props.show ? "has-backdrop" : "no-backdrop"}`}>
+        <div className="header">
             <div className="header__navbar">
                 <div className="header__logo">
                     <img src={require("../../asserts/sun-logo.png")} alt="header-logo"></img>

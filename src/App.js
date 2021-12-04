@@ -64,9 +64,9 @@ class App extends Component {
     return (
       <div className="App">
         <Sidedrawer clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={this.state.showsidedrawer} show={this.state.sidebackdropdisplay}></Sidedrawer>
-        <Header clicked={(e) => this.showingTrueHandler(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)} show={this.state.backdropdisplay}></Header>
+        <Header clicked={(e) => this.showingTrueHandler(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)} ></Header>
         <Banner show={this.state.backdropdisplay}></Banner>
-        <Footer showingsidedrawer={(e) => this.showingSidedrawer(e)} show={this.state.backdropdisplay}></Footer>
+        <Footer></Footer>
         <Backdrop type={this.state.type} clicked={this.showingFalseHandler} show={this.state.backdropdisplay}></Backdrop>
         <SimpleSlider></SimpleSlider>
         <SliderFooter></SliderFooter>
