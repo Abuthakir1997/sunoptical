@@ -33,18 +33,14 @@ class pagination extends React.Component {
 
     render() {
 
-        const { pictures } = this.state;
-        console.log("pictures:", pictures);
         const Sunglasseslength = ["1", "2", "3", "4", "5"];
         const Frameslength = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
         const sizePerPage = 6;
         const indexOfLastTodo = this.state.currentPage * sizePerPage;
         const indexOfFirstTodo = indexOfLastTodo - sizePerPage;
-        console.log(" index of last todo:", indexOfLastTodo);
         let picturesLength = [];
         picturesLength = [this.props.type === "Frames" ? Frameslength : Sunglasseslength];
         picturesLength.push(picturesLength);
-        //imagesArray.push[picturesLength];
         const currentTodos = picturesLength[0].slice(indexOfFirstTodo, indexOfLastTodo);
         const renderDynamicimages = currentTodos.map((todo, index) => {
             return (

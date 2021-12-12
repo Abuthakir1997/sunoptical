@@ -4,7 +4,7 @@ import "./Pagination.css";
 const ReactPagination = (props) => {
     const {
         theme, totalSize, sizePerPage, currentPage, showFirstLastPages,
-        firstPageText, lastPageText, previousPageText, nextPageText, type, backdropdisplay, pictures
+        firstPageText, lastPageText, previousPageText, nextPageText,
     } = props;
 
     let pageNum = Math.ceil(totalSize / sizePerPage);
@@ -59,7 +59,7 @@ const Pagination = (props) => {
         if (l && i - l !== 1) {
             rangeWithEllipsis.push(
                 <li key={isEllipsisIncludes ? -1 : 0} className="pageElli">
-                    <a> . . .</a>
+                    <a href="#empty"> . . .</a>
                 </li>
             );
             isEllipsisIncludes = true;
@@ -67,7 +67,7 @@ const Pagination = (props) => {
         rangeWithEllipsis.push(
             <li key={i} className={currentPage === i ? "is-active" : "page"}
                 onClick={(e) => { e.preventDefault(); props.changeCurrentPage(i) }}>
-                <a>{i}</a>
+                <a href="#empty">{i}</a>
             </li>
         );
         l = i;
@@ -80,7 +80,7 @@ const Page = (props) => {
     return (
         <li className={className}
             onClick={() => props.changeCurrentPage(pageNum)}>
-            <a>
+            <a href="#empty">
                 {label}
             </a>
         </li>

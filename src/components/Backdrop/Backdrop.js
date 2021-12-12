@@ -6,23 +6,6 @@ import FunctionbasedPagination from '../FunctionbasedPagination/functionbasedpag
 import './Backdrop.scss';
 
 const backdrop = (props) => {
-    const array = ["1", "2", "3", "4", "5"];
-    const Sunglasseslength = ["1", "2", "3", "4", "5"];
-    const Frameslength = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
-    const Sunglassesimages = Sunglasseslength.map((sunglassesimages) => {
-        return (
-            <div className="col-12 col-md-4 mb-2 p-2">
-                <img src={require(`../../asserts/sunglasses-images/sun-glasses-${sunglassesimages}.jpg`)} alt="header-logo" />
-            </div>
-        )
-    });
-    const Framesimages = Frameslength.map((framesimages) => {
-        return (
-            <div className="col-12 col-md-4 mb-2 p-2">
-                <img src={require(`../../asserts/frames-images/frames-${framesimages}.jpg`)} alt="header-logo" />
-            </div>
-        )
-    });
     let rows = null;
     switch (props.type) {
         case ("Sunglasses"): {
