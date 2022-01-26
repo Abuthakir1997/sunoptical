@@ -7,6 +7,7 @@ import Backdrop from './components/Backdrop/Backdrop';
 import Sidedrawer from "./components/SideDrawer/sidedrawer";
 import SimpleSlider from './components/Slider/SimpleSlider';
 import SliderFooter from "./components/SliderFooter/sliderfooter";
+import loader from "../src/loader";
 
 class App extends Component {
   state = {
@@ -14,7 +15,8 @@ class App extends Component {
     type: "",
     showsidedrawer: false,
     sidebackdropdisplay: false,
-    pictures: ['frames-1.jpg', 'frames-2.jpg', 'frames-3.jpg', 'frames-4.jpg', 'frames-5.jpg', 'frames-6.jpg', 'frames-7.jpg', 'frames-8.jpg', 'frames-9.jpg', 'frames-10.jpg', 'frames-11.jpg', 'frames-12.jpg', 'frames-13.jpg', 'frames-14.jpg', 'frames-15.jpg', 'frames-16.jpg', 'frames-17.jpg', 'frames-18.jpg'],
+    showingLoader: true
+
   }
   showingTrueHandler = (e) => {
     console.log(e.target.textContent);
@@ -40,11 +42,7 @@ class App extends Component {
     }
 
   }
-  changingHandler(e) {
-    this.setState({
-      pictures: ['sun-glassess-1.jpg', 'sun-glassess-2.jpg', 'sun-glassess-3.jpg', 'sun-glassess-4.jpg', 'sun-glassess-5.jpg'],
-    });
-  }
+
   handleClick(event) {
     this.setState({
       currentPage: Number(event.target.id)
@@ -68,13 +66,17 @@ class App extends Component {
       sidebackdropdisplay: true
     });
   }
-  componentDidMount() {
-
+  componentDidCatch() {
+    this.setState({
+      showingLoader: false
+    })
   }
+
   render() {
 
     return (
       <div className="App">
+        <loader />
         <Sidedrawer clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={this.state.showsidedrawer} show={this.state.sidebackdropdisplay}></Sidedrawer>
         <Header clicked={(e) => this.showingTrueHandler(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)} ></Header>
         <Banner show={this.state.backdropdisplay}></Banner>

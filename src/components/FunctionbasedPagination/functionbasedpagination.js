@@ -1,5 +1,7 @@
 import React from "react";
 import Pagination from "./lib/Pagination";
+import Auxx from "../../hoc/Auxx";
+import Loader from "../Loader/loader";
 
 // const App = () => (
 
@@ -8,7 +10,7 @@ class pagination extends React.Component {
         super(props);
         this.state = {
             currentPage: 1,
-            pictures: ['frames-1.jpg', 'frames-2.jpg', 'frames-3.jpg', 'frames-4.jpg', 'frames-5.jpg', 'frames-6.jpg', 'frames-7.jpg', 'frames-8.jpg', 'frames-9.jpg', 'frames-10.jpg', 'frames-11.jpg', 'frames-12.jpg', 'frames-13.jpg', 'frames-14.jpg', 'frames-15.jpg', 'frames-16.jpg', 'frames-17.jpg', 'frames-18.jpg'],
+            pictures: ['frames-1.jpg', 'frames-2.jpg', 'frames-3.jpg', 'frames-4.jpg', 'frames-5.jpg', 'frames-6.jpg', 'frames-7.jpg', 'frames-8.jpg', 'frames-9.jpg', 'frames-10.jpg', 'frames-11.jpg', 'frames-12.jpg', 'frames-13.jpg', 'frames-14.jpg', 'frames-15.jpg', 'frames-16.jpg', 'frames-17.jpg', 'frames-18.jpg', 'frames-19.jpg', 'frames-20.jpg', 'frames-21.jpg'],
             backdropdisplay: false,
         };
 
@@ -31,10 +33,16 @@ class pagination extends React.Component {
         });
     }
 
+    componentDidMount() {
+        return <Loader></Loader>
+    }
+    componentWillMount() {
+        //return <Loader></Loader>
+    }
     render() {
 
         const Sunglasseslength = ["1", "2", "3", "4", "5"];
-        const Frameslength = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+        const Frameslength = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"];
         const sizePerPage = 6;
         const indexOfLastTodo = this.state.currentPage * sizePerPage;
         const indexOfFirstTodo = indexOfLastTodo - sizePerPage;
@@ -53,32 +61,34 @@ class pagination extends React.Component {
 
         });
         return (
-            <div className="images-section" >
-                <div className="row">
-                    {this.props.type === "Sunglasses"
-                        ?
-                        <div className="sunglasses-section">
-                            <span show={this.props.backdropdisplay} onClick={this.props.clicked}><i className="fa fa-times-circle"></i></span>
-                            {renderDynamicimages}
-                        </div>
-                        :
-                        <div className="frames-section">
-                            <span show={this.props.backdropdisplay} onClick={this.props.clicked}><i className="fa fa-times-circle"></i></span>
-                            {renderDynamicimages}
-                        </div>}
-                    <div className="container">
-                        <div className="box-theme">
-                            <div className="pages">
-                                <Pagination
-                                    currentPage={this.state.currentPage}
-                                    totalSize={this.props.type === "Frames" ? Frameslength.length : Sunglasseslength.length}
-                                    changeCurrentPage={this.changeCurrentPage}
-                                    theme="bootstrap"
-                                />
+            <Auxx>
 
+                <div className="images-section" >
+                    <div className="row">
+                        {this.props.type === "Sunglasses"
+                            ?
+                            <div className="sunglasses-section">
+                                <span show={this.props.backdropdisplay} onClick={this.props.clicked}><i className="fa fa-times-circle"></i></span>
+                                {renderDynamicimages}
                             </div>
-                            <div className="code" style={{ display: "none" }}>
-                                <code >{` <Pagination\n
+                            :
+                            <div className="frames-section">
+                                <span show={this.props.backdropdisplay} onClick={this.props.clicked}><i className="fa fa-times-circle"></i></span>
+                                {renderDynamicimages}
+                            </div>}
+                        <div className="container">
+                            <div className="box-theme">
+                                <div className="pages">
+                                    <Pagination
+                                        currentPage={this.state.currentPage}
+                                        totalSize={this.props.type === "Frames" ? Frameslength.length : Sunglasseslength.length}
+                                        changeCurrentPage={this.changeCurrentPage}
+                                        theme="bootstrap"
+                                    />
+
+                                </div>
+                                <div className="code" style={{ display: "none" }}>
+                                    <code >{` <Pagination\n
                             currentPage={this.state.currentPage}\n
                             totalSize={100}\n
                             sizePerPage={10}\n
@@ -86,14 +96,16 @@ class pagination extends React.Component {
                             theme="bootstrap"\n
                         />`}
 
-                                </code>
+                                    </code>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
 
-            </div>
+                </div>
+            </Auxx>
+
 
         );
     }

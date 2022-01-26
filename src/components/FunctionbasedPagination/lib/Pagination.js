@@ -59,7 +59,7 @@ const Pagination = (props) => {
         if (l && i - l !== 1) {
             rangeWithEllipsis.push(
                 <li key={isEllipsisIncludes ? -1 : 0} className="pageElli">
-                    <a href="#empty"> . . .</a>
+                    <a href={{ i }}> . . .</a>
                 </li>
             );
             isEllipsisIncludes = true;
@@ -67,7 +67,7 @@ const Pagination = (props) => {
         rangeWithEllipsis.push(
             <li key={i} className={currentPage === i ? "is-active" : "page"}
                 onClick={(e) => { e.preventDefault(); props.changeCurrentPage(i) }}>
-                <a href="#empty">{i}</a>
+                <a href={{ i }}>{i}</a>
             </li>
         );
         l = i;
@@ -80,7 +80,7 @@ const Page = (props) => {
     return (
         <li className={className}
             onClick={() => props.changeCurrentPage(pageNum)}>
-            <a href="#empty">
+            <a href={{ pageNum }}>
                 {label}
             </a>
         </li>
