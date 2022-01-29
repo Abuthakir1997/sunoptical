@@ -1,7 +1,7 @@
 import React from "react";
 import Pagination from "./lib/Pagination";
 import Auxx from "../../hoc/Auxx";
-import Loader from "../Loader/loader";
+//import Loader from "../../loader";
 
 // const App = () => (
 
@@ -34,7 +34,7 @@ class pagination extends React.Component {
     }
 
     componentDidMount() {
-        return <Loader></Loader>
+        //return <Loader></Loader>
     }
     componentWillMount() {
         //return <Loader></Loader>

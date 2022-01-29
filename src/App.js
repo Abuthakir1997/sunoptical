@@ -7,7 +7,8 @@ import Backdrop from './components/Backdrop/Backdrop';
 import Sidedrawer from "./components/SideDrawer/sidedrawer";
 import SimpleSlider from './components/Slider/SimpleSlider';
 import SliderFooter from "./components/SliderFooter/sliderfooter";
-import loader from "../src/loader";
+import FramesShapes from "./components/FramesShapes/FramesShapes";
+//import Loader from "../src/loader";
 
 class App extends Component {
   state = {
@@ -76,7 +77,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <loader />
+        {/* <Loader showingLoader={this.state.showingLoader} /> */}
         <Sidedrawer clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={this.state.showsidedrawer} show={this.state.sidebackdropdisplay}></Sidedrawer>
         <Header clicked={(e) => this.showingTrueHandler(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)} ></Header>
         <Banner show={this.state.backdropdisplay}></Banner>
@@ -84,6 +85,7 @@ class App extends Component {
         <Backdrop pictures={this.state.pictures} currentPage={this.state.currentPage} todosPerPage={this.state.todosPerPage} type={this.state.type} clicked={this.showingFalseHandler} show={this.state.backdropdisplay} changingPage={this.handleClick}></Backdrop>
         <SimpleSlider></SimpleSlider>
         <SliderFooter></SliderFooter>
+        <FramesShapes show={this.state.backdropdisplay}></FramesShapes>
       </div>
     )
   }
