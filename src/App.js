@@ -8,6 +8,7 @@ import Sidedrawer from "./components/SideDrawer/sidedrawer";
 import SimpleSlider from './components/Slider/SimpleSlider';
 import SliderFooter from "./components/SliderFooter/sliderfooter";
 import FramesShapes from "./components/FramesShapes/FramesShapes";
+import FramesLogosSection from './components/FramesLogosSection/FramesLogosSection';
 //import Loader from "../src/loader";
 
 class App extends Component {
@@ -86,6 +87,7 @@ class App extends Component {
         <SimpleSlider></SimpleSlider>
         <SliderFooter></SliderFooter>
         <FramesShapes show={this.state.backdropdisplay}></FramesShapes>
+        <FramesLogosSection />
       </div>
     )
   }

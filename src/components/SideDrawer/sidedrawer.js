@@ -12,7 +12,7 @@ const sidedrawer = (props) => {
                     <div className="side-drawer__menu__items">Home</div>
                     <div className="side-drawer__menu__items" onClick={props.clicked}>Frames</div>
                     <div className="side-drawer__menu__items" onClick={props.clicked}>Sunglasses</div>
-                    <div className="side-drawer__menu__items" onClick={props.clicked}>Galleries</div>
+                    <div className="side-drawer__menu__items d-none" onClick={props.clicked}>Galleries</div>
                     <div className="side-drawer__menu__items"></div>
                 </div>
             </div>

@@ -15,7 +15,12 @@ li.page.disabled {
   pointer-events: none;
   color: #999999;
 }
-
+li.page a:hover {
+  text-decoration: none;
+}
+.pages li a:hover{
+  text-decoration: none;
+}
 .react-pagination-js-default .page {
   display: inline-block;
   padding: 0px 9px;
