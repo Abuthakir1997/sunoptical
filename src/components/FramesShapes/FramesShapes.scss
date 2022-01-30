@@ -1,8 +1,10 @@
 .frames-stories{
     position: relative;
     padding: 15rem 0;
+    margin: 10px;
     @media (max-width: 575px) {
         padding: 8rem 0;
+        margin: 0;
     }
     .bg-video{
         position: absolute;
