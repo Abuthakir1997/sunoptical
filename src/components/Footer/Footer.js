@@ -10,7 +10,7 @@ const footer = () => {
                         <span className="d-block">
                             <i class="fa fa-instagram"></i>
                         </span>
-                        <span className="reference"><i style={{ textDecoration: "underline" }}><a href="https://www.instagram.com/sunopticalssivakasi/" target="_blank">sunopticalssivakasi</a></i></span>
+                        <span className="reference"><i style={{ textDecoration: "underline" }}><a href="https://www.instagram.com/sunopticalssivakasi/" rel="noopener noreferrer" target="_blank">sunopticalssivakasi</a></i></span>
                     </div>
                 </div>
                 <div className="col-12 col-md-4 facebook">
@@ -18,7 +18,7 @@ const footer = () => {
                         <span className="d-block">
                             <i class="fa fa-facebook-f"></i>
                         </span>
-                        <span className="reference"><i style={{ textDecoration: "underline" }}><a href="https://www.facebook.com/pages/category/Sunglasses---Eyewear-Store/Sun-Optical-Sivakasi-358552978187146/" target="_blank">Sun Optical</a></i></span>
+                        <span className="reference"><i style={{ textDecoration: "underline" }}><a href="https://www.facebook.com/pages/category/Sunglasses---Eyewear-Store/Sun-Optical-Sivakasi-358552978187146/" rel="noopener noreferrer" target="_blank">Sun Optical</a></i></span>
                     </div>
                 </div>
                 <div className="col-12 col-md-4 location">
@@ -26,7 +26,7 @@ const footer = () => {
                         <span className="d-block">
                             <i class="fa fa-map-marker"></i>
                         </span>
-                        <span className="reference"><i style={{ textDecoration: "underline" }}><a href="https://goo.gl/maps/tioPkUXiQhZmdtBd6" target="_blank">Location</a></i></span>
+                        <span className="reference"><i style={{ textDecoration: "underline" }}><a href="https://goo.gl/maps/tioPkUXiQhZmdtBd6" rel="noopener noreferrer" target="_blank">Location</a></i></span>
                     </div>
                 </div>
             </div>
