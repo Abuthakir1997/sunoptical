@@ -1,3 +1,28 @@
 .footer{
-    width: 100%;
+    background-image: linear-gradient(90deg, rgb(15, 15, 15) 0%, rgb(34, 60, 108) 50%);
+    color: #fff;
+    
+    .instagram,.facebook,.location{
+        
+        span{
+            font-size: 20px;
+            i{
+                color: #fff;
+                a{
+                    color: #fff;
+                }
+            }
+           
+        }
+        .reference{
+            span{
+                i{
+                    a{
+                        color: #fff;
+                    }
+                    
+                }
+            }
+        }
+    }
 }

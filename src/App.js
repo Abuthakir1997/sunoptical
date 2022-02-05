@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import Banner from './components/Banner/Banner';
-import Footer from './components/Footer/Footer';
+import CrizalWrapper from './components/CrizalWrapper/CrizalWrapper';
 import Backdrop from './components/Backdrop/Backdrop';
 import Sidedrawer from "./components/SideDrawer/sidedrawer";
 import SimpleSlider from './components/Slider/SimpleSlider';
 import SliderFooter from "./components/SliderFooter/sliderfooter";
 import FramesShapes from "./components/FramesShapes/FramesShapes";
 import FramesLogosSection from './components/FramesLogosSection/FramesLogosSection';
+import Footer from "./components/Footer/Footer";
 //import Loader from "../src/loader";
 
 class App extends Component {
@@ -82,12 +83,13 @@ class App extends Component {
         <Sidedrawer clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={this.state.showsidedrawer} show={this.state.sidebackdropdisplay}></Sidedrawer>
         <Header clicked={(e) => this.showingTrueHandler(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)} ></Header>
         <Banner show={this.state.backdropdisplay}></Banner>
-        <Footer></Footer>
+        <CrizalWrapper></CrizalWrapper>
         <Backdrop pictures={this.state.pictures} currentPage={this.state.currentPage} todosPerPage={this.state.todosPerPage} type={this.state.type} clicked={this.showingFalseHandler} show={this.state.backdropdisplay} changingPage={this.handleClick}></Backdrop>
         <SimpleSlider></SimpleSlider>
         <SliderFooter></SliderFooter>
         <FramesShapes show={this.state.backdropdisplay}></FramesShapes>
         <FramesLogosSection />
+        <Footer></Footer>
       </div>
     )
   }
