@@ -7,7 +7,7 @@ const framesShapes = (props) => {
             <div className="bg-video">
                 <video className="bg-video__content" autoPlay muted loop>
                     <source src={require("./videos/framesshapes-1.mp4")} type="video/mp4" />
-                    {/* <source src="./videos/videoplayback.webm" type="video/webm" /> */}
+                    <source src={require("../FramesShapes/videos/varietyglasswebm.webm")} type="video/webm" />
                     your browser does not support video
                 </video>
             </div>
