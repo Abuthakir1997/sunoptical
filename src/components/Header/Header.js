@@ -37,7 +37,7 @@ const header = (props) => {
                     <div className="header__menu__items__home">Home</div>
                     <div className="header__menu__items__frames" onClick={props.clicked}>Frames</div>
                     <div className="header__menu__items__sunglasses" onClick={props.clicked}>Sunglasses</div>
-                    <div className="header__menu__items__galleries" onClick={props.clicked}>Galleries</div>
+                    <div className="header__menu__items__galleries d-none" onClick={props.clicked}>Galleries</div>
                     <div className="header__menu__items"></div>
                 </div>
                 <div className="toggle ml-auto mr-3 p-4 d-sm-block d-md-none" onClick={props.showingsidedrawer}>

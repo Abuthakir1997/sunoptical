@@ -29,7 +29,7 @@ class pagination extends React.Component {
 
     changingHandler(e) {
         this.setState({
-            pictures: ['sun-glassess-1.jpg', 'sun-glassess-2.jpg', 'sun-glassess-3.jpg', 'sun-glassess-4.jpg', 'sun-glassess-5.jpg'],
+            pictures: ['sun-glassess-1.jpg', 'sun-glassess-2.jpg', 'sun-glassess-3.jpg', 'sun-glassess-4.jpg', 'sun-glassess-5.jpg', 'sun-glassess-6.jpg', 'sun-glassess-7.jpg'],
         });
     }
 
@@ -41,8 +41,8 @@ class pagination extends React.Component {
     }
     render() {
 
-        const Sunglasseslength = ["1", "2", "3", "4", "5"];
-        const Frameslength = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"];
+        const Sunglasseslength = ["1", "2", "3", "4", "5", "6", "7"];
+        const Frameslength = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"];
         const sizePerPage = 6;
         const indexOfLastTodo = this.state.currentPage * sizePerPage;
         const indexOfFirstTodo = indexOfLastTodo - sizePerPage;
