@@ -18,7 +18,7 @@ const footer = () => {
                         <span className="d-block">
                             <i class="fa fa-facebook-f"></i>
                         </span>
-                        <span className="reference"><i style={{ textDecoration: "underline" }}><a href="https://www.facebook.com/pages/category/Sunglasses---Eyewear-Store/Sun-Optical-Sivakasi-358552978187146/" rel="noopener noreferrer" target="_blank">Sun Optical</a></i></span>
+                        <span className="reference"><i style={{ textDecoration: "underline" }}><a href="https://www.facebook.com/sunopticalsivakasi/" rel="noopener noreferrer" target="_blank">Sun Optical</a></i></span>
                     </div>
                 </div>
                 <div className="col-12 col-md-3 location">
