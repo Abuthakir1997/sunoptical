@@ -1,0 +1,86 @@
+.Banner {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background: #000;
+}
+
+.Banner a {
+  z-index: 1;
+}
+
+.Banner .carousel-item img {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+  height: 800px;
+}
+
+@media (max-width: 575px) {
+  .Banner .carousel-item img {
+    height: 200px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.Banner .frame-logo {
+  width: 500px;
+  max-width: 500px;
+}
+
+.overlay-banner {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes color-animate {
+  0% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#0a0a0a), to(#750000));
+    background: linear-gradient(0deg, #0a0a0a, #750000);
+  }
+  20% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#560b49), to(#423e00));
+    background: linear-gradient(0deg, #560b49, #423e00);
+  }
+  40% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#470000), to(#470038));
+    background: linear-gradient(0deg, #470000, #470038);
+  }
+}
+
+@keyframes color-animate {
+  0% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#0a0a0a), to(#750000));
+    background: linear-gradient(0deg, #0a0a0a, #750000);
+  }
+  20% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#560b49), to(#423e00));
+    background: linear-gradient(0deg, #560b49, #423e00);
+  }
+  40% {
+    background: -webkit-gradient(linear, left bottom, left top, from(#470000), to(#470038));
+    background: linear-gradient(0deg, #470000, #470038);
+  }
+}
+
+/* media queries */
+@media (max-width: 1024px) {
+  .overlay {
+    width: 861px;
+    height: 433px;
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Banner {
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+/*# sourceMappingURL=Banner.css.map */
