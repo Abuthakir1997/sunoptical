@@ -81,7 +81,7 @@ class App extends Component {
       <div className="App">
         {/* <Loader showingLoader={this.state.showingLoader} /> */}
         <Sidedrawer clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={this.state.showsidedrawer} show={this.state.sidebackdropdisplay}></Sidedrawer>
-        <Header clicked={(e) => this.showingTrueHandler(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)} ></Header>
+        <Header clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)} ></Header>
         <Banner show={this.state.backdropdisplay}></Banner>
         <CrizalWrapper></CrizalWrapper>
         <Backdrop pictures={this.state.pictures} currentPage={this.state.currentPage} todosPerPage={this.state.todosPerPage} type={this.state.type} clicked={this.showingFalseHandler} show={this.state.backdropdisplay} changingPage={this.handleClick}></Backdrop>

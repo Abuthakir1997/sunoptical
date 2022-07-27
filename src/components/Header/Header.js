@@ -34,7 +34,7 @@ const header = (props) => {
                 </div>
                 <div className="logo-name">Sun Optical</div>
                 <div className="header__menu ml-auto d-none d-md-flex">
-                    <div className="header__menu__items__home">Home</div>
+                    <div className="header__menu__items__home" onClick={props.clickedbackdrop}>Home</div>
                     <div className="header__menu__items__frames" onClick={props.clicked}>Frames</div>
                     <div className="header__menu__items__sunglasses" onClick={props.clicked}>Sunglasses</div>
                     <div className="header__menu__items__galleries d-none" onClick={props.clicked}>Galleries</div>
