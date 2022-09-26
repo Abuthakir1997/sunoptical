@@ -6,6 +6,8 @@ import FunctionbasedPagination from '../FunctionbasedPagination/functionbasedpag
 import './Backdrop.scss';
 
 const backdrop = (props) => {
+    debugger;
+    console.log(props.type);
     let rows = null;
     switch (props.type) {
         case ("Sunglasses"): {
