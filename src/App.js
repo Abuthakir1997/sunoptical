@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import Banner from './components/Banner/Banner';
@@ -10,88 +11,101 @@ import SliderFooter from "./components/SliderFooter/sliderfooter";
 import FramesShapes from "./components/FramesShapes/FramesShapes";
 import FramesLogosSection from './components/FramesLogosSection/FramesLogosSection';
 import Footer from "./components/Footer/Footer";
+import {Routes, Route } from "react-router-dom";
 //import Loader from "../src/loader";
 
-class App extends Component {
-  state = {
-    backdropdisplay: false,
-    type: "",
-    showsidedrawer: false,
-    sidebackdropdisplay: false,
-    showingLoader: true
+const App = () => {
+  const [backdropdisplay, setbackdropdisplay] = useState(false);
+  const [type, setType] = useState("");
+  const [showsidedrawer, setShowSideDrawer] = useState(false);
+  const [sidebackdropdisplay, setsidebackdropdisplay] = useState(false);
+  const [currentPage, setcurrentPage] = useState(0);
 
-  }
-  showingTrueHandler = (e) => {
+  // state = {
+  //   backdropdisplay: false,
+  //   type: "",
+  //   showsidedrawer: false,
+  //   sidebackdropdisplay: false,
+  //   showingLoader: true
+  // }
+  
+  const showingTrueHandler = (e) => {
     console.log(e.target.textContent);
     var text = e.target.textContent;
     if (text === 'Sunglasses') {
-      this.setState({
-        backdropdisplay: true,
-        type: text
-      })
+      setbackdropdisplay(true);
+      setType({ type: text})
+      // setState({
+      //   backdropdisplay: true,
+       
+      // })
     }
+
     else if (text === 'Frames') {
-      this.setState({
-        backdropdisplay: true,
-        type: text
-      });
-
+      setbackdropdisplay(true);
+      setType(text);
+      // setState({
+      //   backdropdisplay: true,
+      //   type: text
+      // });
     }
+
     else {
-      this.changingHandler(e);
-      this.setState({
-        backdropdisplay: false
-      })
+      setbackdropdisplay(false);
+      // this.setState({
+      //   backdropdisplay: false
+      // })
     }
 
   }
 
-  handleClick(event) {
-    this.setState({
-      currentPage: Number(event.target.id)
-    });
-  }
-  showingFalseHandler = () => {
-    this.setState({
-      backdropdisplay: false,
-    })
-  }
-  notshowingSidedrawer = (e) => {
-    this.setState({
-      showsidedrawer: false,
-      sidebackdropdisplay: false,
-    });
-
-  }
-  showingSidedrawer = (e) => {
-    this.setState({
-      showsidedrawer: true,
-      sidebackdropdisplay: true
-    });
-  }
-  componentDidCatch() {
-    this.setState({
-      showingLoader: false
-    })
+  const handleClick = (event) => {
+    setcurrentPage(Number(event.target.id));
+    // this.setState({
+    //   currentPage: 
+    // });
   }
 
-  render() {
+  const showingFalseHandler = () => {
+    setbackdropdisplay(false);
+  }
+
+  const notshowingSidedrawer = (e) => {
+    setsidebackdropdisplay(false);
+    setShowSideDrawer(false);
+    // this.setState({
+    //   showsidedrawer: false,
+    //   sidebackdropdisplay: false,
+    // });
+
+  }
+
+  const showingSidedrawer = (e) => {
+    setShowSideDrawer(true);
+    setbackdropdisplay(true);
+    // this.setState({
+    //   showsidedrawer: true,
+    //   sidebackdropdisplay: true
+    // });
+  }
 
     return (
       <div className="App">
+        {/* <Routes>
+            <Route path='/frames' element={<Backdrop  currentPage={currentPage}  type={type} clicked={showingFalseHandler} show={backdropdisplay} changingPage={(event) => handleClick(event)}/>} exact/>
+          </Routes> */}
         {/* <Loader showingLoader={this.state.showingLoader} /> */}
-        <Sidedrawer clicked={(e) => this.showingTrueHandler(e)} clickedbackdrop={(e) => this.notshowingSidedrawer(e)} showingsidedrawer={this.state.showsidedrawer} show={this.state.sidebackdropdisplay}></Sidedrawer>
-        <Header clicked={(e) => this.showingTrueHandler(e)} showingsidedrawer={(e) => this.showingSidedrawer(e)} ></Header>
-        <Banner show={this.state.backdropdisplay}></Banner>
+        <Sidedrawer clicked={(e) => showingTrueHandler(e)} clickedbackdrop={(e) => notshowingSidedrawer(e)} showingsidedrawer={showsidedrawer} show={sidebackdropdisplay}></Sidedrawer>
+        <Header clicked={(e) => showingTrueHandler(e)} clickedbackdrop={(e) => notshowingSidedrawer(e)} showingsidedrawer={(e) => showingSidedrawer(e)} ></Header>
+        <Banner show={backdropdisplay}></Banner>
         <CrizalWrapper></CrizalWrapper>
-        <Backdrop pictures={this.state.pictures} currentPage={this.state.currentPage} todosPerPage={this.state.todosPerPage} type={this.state.type} clicked={this.showingFalseHandler} show={this.state.backdropdisplay} changingPage={this.handleClick}></Backdrop>
+         <Backdrop  currentPage={currentPage} type={type} clicked={showingFalseHandler} show={backdropdisplay} changingPage={handleClick}></Backdrop>
         <SimpleSlider></SimpleSlider>
         <SliderFooter></SliderFooter>
-        <FramesShapes show={this.state.backdropdisplay}></FramesShapes>
+        <FramesShapes show={backdropdisplay}></FramesShapes>
         <FramesLogosSection />
         <Footer></Footer>
       </div>
-    )
-  }
+    );
 }
 export default App;

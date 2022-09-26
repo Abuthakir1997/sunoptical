@@ -1,6 +1,8 @@
 import React from "react";
 import Pagination from "./lib/Pagination";
 import Auxx from "../../hoc/Auxx";
+import ProgressiveImg from "../ProgressiveImage/ProgressiveImageComponent";
+import placeholderSrc from "../../../src/asserts/052019-Summer-GIFs_2-min.gif";
 //import Loader from "../../loader";
 
 // const App = () => (
@@ -32,13 +34,6 @@ class pagination extends React.Component {
             pictures: ['sun-glassess-1.jpg', 'sun-glassess-2.jpg', 'sun-glassess-3.jpg', 'sun-glassess-4.jpg', 'sun-glassess-5.jpg', 'sun-glassess-6.jpg', 'sun-glassess-7.jpg'],
         });
     }
-
-    componentDidMount() {
-        //return <Loader></Loader>
-    }
-    componentWillMount() {
-        //return <Loader></Loader>
-    }
     render() {
 
         const Sunglasseslength = ["1", "2", "3", "4", "5", "6", "7"];
@@ -54,9 +49,28 @@ class pagination extends React.Component {
             return (
                 this.props.type === "Frames"
                     ?
-                    <div className="col-12 col-md-4 mb-2 p-2"><img key={index} src={require(`../../asserts/frames-images/frames-${todo}.jpg`)} alt={todo} /></div>
+                    
+                    <div className="col-12 col-md-4 mb-2 p-2" key={index}>
+                        <ProgressiveImg
+                        src = {require(`../../asserts/frames-images/frames-${todo}.jpg`)}
+                        placeholderSrc = {placeholderSrc}
+                        alt = {todo}
+                        width = "100%"
+                        height = "100%"
+                        />
+                        </div>
                     :
-                    <div className="col-12 col-md-4 mb-2 p-2"><img key={index} src={require(`../../asserts/sunglasses-images/sun-glasses-${todo}.jpg`)} alt={todo} /></div>
+                    <div className="col-12 col-md-4 mb-2 p-2" >
+                        <ProgressiveImg
+                        src = {require(`../../asserts/sunglasses-images/sun-glasses-${todo}.jpg`)}
+                        placeholderSrc = {placeholderSrc}
+                        alt = {todo}
+                        key = {index}
+                        width = "100%"
+                        height = "100%"
+                        />
+                        {/* <img key={index} src={require(`../../asserts/sunglasses-images/sun-glasses-${todo}.jpg`)} alt={todo} /> */}
+                    </div>
             )
 
         });
