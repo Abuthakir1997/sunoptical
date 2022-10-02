@@ -1,5 +1,5 @@
-.header{
-    &__navbar{
+.header {
+    &__navbar {
         display: flex;
         align-items: center;
         position: fixed;
@@ -7,47 +7,65 @@
         width: 100%;
         background-image: linear-gradient(90deg, #0f0f0f 0%, #223c6c 50%);
         transition: padding 400ms ease;
-        .logo-name{
+
+        .logo-name {
             position: relative;
             font-size: 24px;
             -webkit-background-clip: text;
             -webkit-text-fill-color: white;
             left: -55px;
+
             @media (max-width: 575px) {
                 font-size: 20px;
             }
         }
-        .toggle{
+
+        .toggle {
             cursor: pointer;
-            span{
+
+            span {
                 color: #fff;
                 font-size: 25px;
             }
         }
     }
-    &__logo{
-        img{
+
+    &__logo {
+        img {
             width: 100px;
             max-width: 200px;
             margin-left: 20px;
             animation: logo-rotation 10s infinite linear;
             transition: transform 400ms ease;
-            
+
         }
-        
+
     }
-    &__menu{
+
+    &__menu {
         display: flex;
         transition: transform 1s ease;
-        &__items{           
-            &__home,&__frames,&__sunglasses,&__galleries{
-                margin:15px;
+
+        a {
+            &:focus {
+                text-decoration: none;
+            }
+        }
+
+        &__items {
+
+            &__home,
+            &__frames,
+            &__sunglasses,
+            &__galleries {
+                margin: 15px;
                 text-transform: uppercase;
                 font-size: 12px;
                 font-weight: bold;
                 color: #fff;
                 cursor: pointer;
-                &:hover{
+
+                &:hover {
                     color: red;
                     color: red;
                     transform: scaleX(1.2) scaleY(1.5);
@@ -55,8 +73,9 @@
                     transition: transform 0
                 }
             }
-        }       
-        &.move{
+        }
+
+        &.move {
             transform: translateX(-180px);
         }
     }
@@ -64,30 +83,31 @@
 
 
 
-@keyframes logo-rotation{
-        from{
-            transform: rotate(0deg);
-        }
-        to{
-            transform: rotate(360deg);
-        }
+@keyframes logo-rotation {
+    from {
+        transform: rotate(0deg);
     }
 
+    to {
+        transform: rotate(360deg);
+    }
+}
 
-    // media queries
+
+// media queries
 
 @media (max-width: 575px) {
-    .header{
-        &__navbar{
+    .header {
+        &__navbar {
             position: relative;
             justify-content: center;
             align-items: center;
-            
+
         }
-        &__menu{
+
+        &__menu {
             display: none;
         }
     }
-    
-}
 
+}
