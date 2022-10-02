@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-
+import { Link } from 'react-router-dom';
 const header = (props) => {
 
     //shrinking navbar
@@ -35,8 +35,13 @@ const header = (props) => {
                 <div className="logo-name">Sun Optical</div>
                 <div className="header__menu ml-auto d-none d-md-flex">
                     <div className="header__menu__items__home" onClick={props.clickedbackdrop}>Home</div>
-                    <div className="header__menu__items__frames" onClick={props.clicked}>Frames</div>
+                    <Link to="/frames">
+                        <div className="header__menu__items__frames" onClick={props.clicked}>Frames</div>
+                    </Link>
+                    <Link to="/sunglasses">
                     <div className="header__menu__items__sunglasses" onClick={props.clicked}>Sunglasses</div>
+                    </Link>
+                   
                     <div className="header__menu__items__galleries d-none" onClick={props.clicked}>Galleries</div>
                     <div className="header__menu__items"></div>
                 </div>

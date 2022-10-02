@@ -4,7 +4,6 @@ import './App.scss';
 import Header from './components/Header/Header';
 import Banner from './components/Banner/Banner';
 import CrizalWrapper from './components/CrizalWrapper/CrizalWrapper';
-import Backdrop from './components/Backdrop/Backdrop';
 import Sidedrawer from "./components/SideDrawer/sidedrawer";
 import SimpleSlider from './components/Slider/SimpleSlider';
 import SliderFooter from "./components/SliderFooter/sliderfooter";
@@ -12,6 +11,8 @@ import FramesShapes from "./components/FramesShapes/FramesShapes";
 import FramesLogosSection from './components/FramesLogosSection/FramesLogosSection';
 import Footer from "./components/Footer/Footer";
 import {Routes, Route } from "react-router-dom";
+import Frames from './components/Frames-section/Frames';
+import Sunglasses from './components/sunglasses-section/sunglasses-section';
 //import Loader from "../src/loader";
 
 const App = () => {
@@ -30,11 +31,12 @@ const App = () => {
   // }
   
   const showingTrueHandler = (e) => {
+
     console.log(e.target.textContent);
     var text = e.target.textContent;
     if (text === 'Sunglasses') {
       setbackdropdisplay(true);
-      setType({ type: text})
+      setType(text)
       // setState({
       //   backdropdisplay: true,
        
@@ -52,9 +54,9 @@ const App = () => {
 
     else {
       setbackdropdisplay(false);
-      // this.setState({
-      //   backdropdisplay: false
-      // })
+      this.setState({
+        backdropdisplay: false
+      })
     }
 
   }
@@ -91,15 +93,17 @@ const App = () => {
 
     return (
       <div className="App">
-        {/* <Routes>
-            <Route path='/frames' element={<Backdrop  currentPage={currentPage}  type={type} clicked={showingFalseHandler} show={backdropdisplay} changingPage={(event) => handleClick(event)}/>} exact/>
-          </Routes> */}
+        <Routes>
+            {/* <Route path='/frames' element={<Backdrop  currentPage={currentPage}  type={type} clicked={showingFalseHandler} show={backdropdisplay} changingPage={(event) => handleClick(event)}/>} exact/> */}
+            <Route path="/frames" element={<Frames currentPage={currentPage}  type={type} clicked={showingFalseHandler} show={backdropdisplay} changingPage={(event) => handleClick(event)}></Frames>}/>
+            <Route path="/sunglasses" element={<Sunglasses currentPage={currentPage}  type={type} clicked={showingFalseHandler} show={backdropdisplay} changingPage={(event) => handleClick(event)}></Sunglasses>}/>
+          </Routes>
         {/* <Loader showingLoader={this.state.showingLoader} /> */}
         <Sidedrawer clicked={(e) => showingTrueHandler(e)} clickedbackdrop={(e) => notshowingSidedrawer(e)} showingsidedrawer={showsidedrawer} show={sidebackdropdisplay}></Sidedrawer>
         <Header clicked={(e) => showingTrueHandler(e)} clickedbackdrop={(e) => notshowingSidedrawer(e)} showingsidedrawer={(e) => showingSidedrawer(e)} ></Header>
         <Banner show={backdropdisplay}></Banner>
         <CrizalWrapper></CrizalWrapper>
-         <Backdrop  currentPage={currentPage} type={type} clicked={showingFalseHandler} show={backdropdisplay} changingPage={handleClick}></Backdrop>
+         {/* <Backdrop  currentPage={currentPage} type={type} clicked={showingFalseHandler} show={backdropdisplay} changingPage={handleClick}></Backdrop> */}
         <SimpleSlider></SimpleSlider>
         <SliderFooter></SliderFooter>
         <FramesShapes show={backdropdisplay}></FramesShapes>
