@@ -12,10 +12,11 @@ const sidedrawer = (props) => {
                 <div className="side-drawer__menu ml-auto">
                     <div className="side-drawer__menu__items" onClick={props.clickedbackdrop} show={props.show}>Home</div>
                     <Link to="/frames">
-                    <div className="side-drawer__menu__items" onClick={props.clicked}>Frames</div>
+                        <div className="side-drawer__menu__items" onClick={props.clickedbackdrop} show={props.show}>Frames</div>
                     </Link>
-                    
-                    <div className="side-drawer__menu__items" onClick={props.clicked}>Sunglasses</div>
+                    <Link to="/sunglasses">
+                        <div className="side-drawer__menu__items" onClick={props.clickedbackdrop} show={props.show}>Sunglasses</div>
+                    </Link>
                     <div className="side-drawer__menu__items d-none" onClick={props.clicked}>Galleries</div>
                     <div className="side-drawer__menu__items"></div>
                 </div>
