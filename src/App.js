@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
 import './App.scss';
+import {useState} from 'react';
 import Header from './components/Header/Header';
 import Banner from './components/Banner/Banner';
 import CrizalWrapper from './components/CrizalWrapper/CrizalWrapper';
@@ -13,8 +13,10 @@ import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import Frames from './components/Frames-section/Frames';
 import Sunglasses from './components/sunglasses-section/sunglasses-section';
+import { useEffect } from 'react';
 import Auxx from './hoc/Auxx';
 import SnowEffect from './customized-components/snow-component/snow-component';
+import DiscountPage from './customized-components/discount-component/discount-component';
 //import Loader from "../src/loader";
 
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
   const [type, setType] = useState("");
   const [showsidedrawer, setShowSideDrawer] = useState(false);
   const [currentPage, setcurrentPage] = useState(0);
+  const [showingDiscountPage, setShowingDiscountPage] = useState(true);
+  const delay = 10;
 
   // state = {
   //   backdropdisplay: false,
@@ -30,6 +34,10 @@ const App = () => {
   //   sidebackdropdisplay: false,
   //   showingLoader: true
   // }
+
+
+
+
 
   const showingTrueHandler = (e) => {
 
@@ -82,6 +90,12 @@ const App = () => {
     // });
 
   }
+   useEffect(() => {
+     let timer1 = setTimeout(() => setShowingDiscountPage(false), delay * 1000);
+     return () => {
+       clearTimeout(timer1);
+     };
+   },[]);
 
   return (
     <div className="App">
@@ -92,6 +106,7 @@ const App = () => {
       </Routes>
       {/* <Loader showingLoader={this.state.showingLoader} /> */}
       <Auxx>
+        <DiscountPage showingDiscountPage={showingDiscountPage}/>
         <Sidedrawer clicked={(e) => showingTrueHandler(e)} showingsidedrawer={showsidedrawer} show={backdropdisplay} clickedbackdrop={(e) => notshowingSidedrawer(e)} ></Sidedrawer>
         <Header clicked={(e) => showingTrueHandler(e)} clickedbackdrop={(e) => notshowingSidedrawer(e)} showingsidedrawer={(e) => showingSidedrawer(e)}></Header>
         <Banner show={backdropdisplay}></Banner>
