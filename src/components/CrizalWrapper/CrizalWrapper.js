@@ -1,7 +1,7 @@
 import React from 'react';
 import './CrizalWrapper.scss';
 
-const crizalWrapper = (props) => {
+const CrizalWrapper = (props) => {
     return (
         <div className="crizal-wrapper">
             <img src={require("./footer-image.jpg")} alt="header-logo" className="w-100"></img>
@@ -9,4 +9,4 @@ const crizalWrapper = (props) => {
     )
 }
 
-export default crizalWrapper;
+export default CrizalWrapper;

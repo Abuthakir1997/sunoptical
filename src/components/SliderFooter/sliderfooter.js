@@ -1,7 +1,7 @@
 import React from "react";
 import "../SliderFooter/sliderfooter.scss";
 
-const sliderFooter = () => {
+const SliderFooter = () => {
     return (
         <div className="slider-footer">
             <img src={require("../SliderFooter/slider-footer-images/landscape-2.jpg")} alt="slider-footer"></img>
@@ -9,4 +9,4 @@ const sliderFooter = () => {
     )
 }
 
-export default sliderFooter;
+export default SliderFooter;

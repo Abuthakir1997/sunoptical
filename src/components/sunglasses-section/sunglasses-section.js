@@ -27,7 +27,7 @@ const Sunglasses = (props) => {
                 <div className="row">
                     <div className='sunglasses-section'>
                         <Link to="/">
-                            <span onClick={props.clicked} show={props.show}><i className="fa fa-times-circle"></i></span>
+                            <span><i className="fa fa-times-circle"></i></span>
                         </Link>
                         {rows}
                     </div>

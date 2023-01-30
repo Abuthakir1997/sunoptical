@@ -1,7 +1,7 @@
 import React from "react";
 import "./FramesShapes.scss";
 
-const framesShapes = (props) => {
+const FramesShapes = (props) => {
     return (
         <div className={`frames-stories ${props.show ? "d-none" : ""}`}>
             <div className="bg-video">
@@ -16,4 +16,4 @@ const framesShapes = (props) => {
     )
 }
 
-export default framesShapes;
+export default FramesShapes;

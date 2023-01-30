@@ -47,7 +47,9 @@
         transition: transform 1s ease;
 
         a {
-            &:focus {
+
+            &:focus,
+            &:hover {
                 text-decoration: none;
             }
         }

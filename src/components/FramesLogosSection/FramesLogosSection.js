@@ -1,7 +1,7 @@
 import React from "react";
 import "./FramesLogosSection.scss";
 
-const framesLogosSection = () => {
+const FramesLogosSection = () => {
     return (
         <div className="frames-logos-section">
             <img src={require("../../asserts/frames-company-logos.jpg")} alt="framescompanylogos" />
@@ -9,4 +9,4 @@ const framesLogosSection = () => {
     );
 }
 
-export default framesLogosSection;
+export default FramesLogosSection;

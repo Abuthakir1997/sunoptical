@@ -8,8 +8,8 @@ const Frames = (props) => {
     const Frameslength = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27"];
     //const framesSectionRow = document.getElementsByClassName('images-section row')
 
-    
-    
+
+
     // Frameslength.forEach(function (framesdata, index) {
 
     //         $('#' + index + '.dynamic-container .inside-dynamic-container').on('scroll', function () {
@@ -53,8 +53,8 @@ const Frames = (props) => {
             <div className="images-section">
                 <div className="row">
                     <div className='frames-section'>
-                        <Link to="/">
-                            <span onClick={props.clicked} show={props.show}><i className="fa fa-times-circle"></i></span>
+                        <Link to="/" exact>
+                            <span><i className="fa fa-times-circle"></i></span>
                         </Link>
                         {rows}
                     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.scss";
 
-const footer = () => {
+const Footer = () => {
     return (
         <div className="footer">
             <div className="row m-0">
@@ -42,4 +42,4 @@ const footer = () => {
     )
 }
 
-export default footer;
+export default Footer;
