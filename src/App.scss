@@ -1,19 +1,22 @@
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
 .App {
   text-align: center;
   position: relative;
-  .has-backdrop{
+
+  .has-backdrop {
     display: none;
-}
-  .no-backdrop{
+  }
+
+  .no-backdrop {
     display: block;
   }
+
   .post {
     display: flex;
     flex-direction: column;
@@ -25,7 +28,7 @@
     padding: 15px 10px;
     background: #fff;
   }
-  
+
   small {
     border: 2px solid #777;
     border-radius: 7px;
@@ -33,7 +36,11 @@
     color: #777;
   }
 }
-body{
-  background: #000;
-}
 
+body {
+  background: #000;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
