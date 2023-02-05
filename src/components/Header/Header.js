@@ -5,30 +5,6 @@ const Header = (props) => {
     const {
         handleSideDrawer
     } = props;
-    //console.log("showingsidedrawer", showSideDrawer);
-    //shrinking navbar
-    // function onScroll() {
-    //     const scrollOffset = window.pageYOffset;
-    //     const menu = document.querySelector('.header__menu');
-    //     const navbar = document.querySelector(".header__navbar");
-    //     const logo = document.querySelector(".logo-name");
-    //     const logoImage = document.querySelector(".header__logo");
-
-    //     if (scrollOffset > 20) {
-    //         menu.classList.add("move");
-    //         logo.classList.add("d-none");
-    //         navbar.style.backgroundImage = "linear-gradient(90deg, rgb(149 163 189) 0%, rgb(15, 15, 15) 50%)";
-    //         logoImage.style.transform = "scale(0.8)";
-    //     }
-    //     else {
-    //         menu.classList.remove("move");
-    //         logo.classList.remove("d-none");
-    //         navbar.style.backgroundImage = "linear-gradient(90deg, #0f0f0f 0%, #223c6c 50%)";
-    //         logoImage.style.transform = "scale(1)";
-    //     }
-    // }
-
-    // window.addEventListener("scroll", onScroll);
     return (
         <div className="header">
             <div className="header__navbar">

@@ -19,16 +19,12 @@ const App = () => {
     setShowSideDrawer(true);
   }
   const closeSideDrawer = () => {
-    console.log("CLICKED CLOSE");
     setShowSideDrawer(false);
   }
-  console.log("showingDiscountPage before", showingDiscountPage);
   useEffect(() => {
-    console.log("inside useeffect");
     let timer1 = setTimeout(() => {
-      console.log("showingDiscountPage", showingDiscountPage);
       setShowingDiscountPage(false);
-    }, delay * 6000);
+    }, delay * 9000);
     return () => {
       clearTimeout(timer1);
     };
@@ -37,26 +33,18 @@ const App = () => {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<Home handleSideDrawer={() => handleSideDrawer()} />} exact />
-        <Route path="/frames" element={<Frames />} exact />
-        <Route path="/sunglasses" element={<Sunglasses />} exact />
-      </Routes>
       {
-        showingDiscountPage ? <DiscountPage /> : null
+        showingDiscountPage ? <DiscountPage /> :
+          <>
+            <Routes>
+              <Route path='/' element={<Home handleSideDrawer={() => handleSideDrawer()} />} exact />
+              <Route path="/frames" element={<Frames />} exact />
+              <Route path="/sunglasses" element={<Sunglasses />} exact />
+            </Routes>
+            <Sidedrawer showSideDrawer={showSideDrawer} closeSideDrawer={closeSideDrawer}></Sidedrawer>
+            <SnowEffect />
+          </>
       }
-
-
-      <Sidedrawer showSideDrawer={showSideDrawer} closeSideDrawer={closeSideDrawer}></Sidedrawer>
-      <SnowEffect />
-      {/* <Banner show={backdropdisplay}></Banner>
-        <CrizalWrapper></CrizalWrapper>
-        <SimpleSlider></SimpleSlider>
-        <SliderFooter></SliderFooter>
-        <FramesShapes show={backdropdisplay}></FramesShapes>
-        <FramesLogosSection />
-        <Footer></Footer> 
-        */}
     </div>
   );
 }

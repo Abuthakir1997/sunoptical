@@ -1,50 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import placeholderSrc from "../../asserts/052019-Summer-GIFs_2-min.gif";
 import ProgressiveImg from '../ProgressiveImage/ProgressiveImageComponent';
 import "../Backdrop/Backdrop.scss";
 import { Link } from 'react-router-dom';
+import framesImages from "../../configurations/frames-images-config.json";
+import { useCallback } from 'react';
 
 const Frames = (props) => {
-    const Frameslength = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27"];
-    //const framesSectionRow = document.getElementsByClassName('images-section row')
+    const [allItems, setAllItems] = useState([]);
+    const [displayItems, setDisplayItems] = useState([]);
+    const [hasMore, setHasMore] = useState(true);
+    //console.log("sunglasses",sunglassesImages);
+
+    useEffect(() => {
+        setAllItems(framesImages);
+        setDisplayItems(framesImages.slice(0, 10));
+    }, []);
+
+
+    const handleScroll = useCallback(() => {
+        if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || !hasMore) {
+            return;
+        }
+        if (displayItems.length === allItems.length) {
+            setHasMore(false);
+            return;
+        }
+        console.log("displayitems", displayItems);
+        setDisplayItems(displayItems.concat(allItems.slice(displayItems.length, displayItems.length + 10)));
+
+    }, [displayItems, allItems, hasMore]);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [handleScroll]);
 
 
 
-    // Frameslength.forEach(function (framesdata, index) {
-
-    //         $('#' + index + '.dynamic-container .inside-dynamic-container').on('scroll', function () {
-    //             let div = $(this).get(0);
-    //             if (div.scrollTop + div.clientHeight + 100 >= div.scrollHeight) {
-    //                 let id = $(this).parent().get(0).id;
-    //                 if (dynamicConData[id].length > 0) {
-    //                     // do the lazy loading here
-    //                     var sliceData = dynamicConData[id].splice(0, scrollItemLength);
-    //                     var itemHtml = buildTemplate(sliceData, "item-absolute-dynamic-data-template");
-    //                     $("#" + id + " .inside-dynamic-container.items-content").append(itemHtml);
-    //                 }
-    //             }
-    //         });
-
-
-
-
-
-
-
-
-
-
-    const rows = Frameslength.map(frames => {
-        return <div className="col-12 col-md-4 mb-2 p-2" >
+    const rows = framesImages.map((frames, index) => {
+        return <div className="col-12 col-md-4 mb-2 p-2" key={index}>
             <ProgressiveImg
-                src={require(`../../asserts/frames-images/frames-${frames}.jpg`)}
+                src={require(`../../asserts/frames-images/${frames.image}.jpg`)}
                 placeholderSrc={placeholderSrc}
                 alt={""}
                 key={frames}
                 width="100%"
                 height="100%"
             />
-            {/* <img key={index} src={require(`../../asserts/sunglasses-images/sun-glasses-${todo}.jpg`)} alt={todo} /> */}
         </div>
     })
     return (
@@ -53,7 +56,7 @@ const Frames = (props) => {
             <div className="images-section">
                 <div className="row">
                     <div className='frames-section'>
-                        <Link to="/" exact>
+                        <Link to="/">
                             <span><i className="fa fa-times-circle"></i></span>
                         </Link>
                         {rows}

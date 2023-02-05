@@ -1,32 +1,49 @@
-.Banner{
+.Banner {
     position: relative;
     text-align: center;
     width: 100%;
     background: #000;
+    margin-top: 100px;
+
     //animation: color-animate 9s linear infinite;
-        a {
-            z-index: 1;
-        }
-        .carousel-item{
-            img{
-                transform: scale(0.6);
-               // width: 700px;
-                height: 800px;
-                @media(max-width:575px){
+    a {
+        z-index: 1;
+    }
+
+    .carousel {
+        &-inner {
+            .carousel-item {
+                height: 500px;
+
+                @media (max-width: 767px) {
                     height: 200px;
-                    transform: scale(1);
+                }
+
+                img {
+                    transform: scale(0.9);
+                    height: 100%;
+                    background-size: cover;
+                    background-position: center;
+
+                    @media(max-width:575px) {
+                        transform: none;
+                        height: 200px;
+                    }
                 }
             }
         }
-        
+
+    }
+
 
 }
-.Banner .frame-logo{
+
+.Banner .frame-logo {
     width: 500px;
     max-width: 500px;
 }
 
-.overlay-banner{
+.overlay-banner {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
@@ -37,13 +54,15 @@
 }
 
 @keyframes color-animate {
-    0%{
+    0% {
         background: linear-gradient(0deg, #0a0a0a, #750000);
     }
-    20%{
+
+    20% {
         background: linear-gradient(0deg, #560b49, #423e00);
     }
-    40%{
+
+    40% {
         background: linear-gradient(0deg, #470000, #470038);
     }
 }
@@ -51,15 +70,16 @@
 
 /* media queries */
 
-@media(max-width:1024px){
-    .overlay{
+@media(max-width:1024px) {
+    .overlay {
         width: 861px;
         height: 433px;
         max-width: 680px;
     }
 }
-@media (max-width:768px){
-    .Banner{
+
+@media (max-width:768px) {
+    .Banner {
         animation: none;
     }
 }

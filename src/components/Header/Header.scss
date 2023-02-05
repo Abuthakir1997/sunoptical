@@ -1,9 +1,12 @@
 .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 7;
+
     &__navbar {
         display: flex;
         align-items: center;
-        position: fixed;
-        z-index: 2;
         width: 100%;
         background-image: linear-gradient(90deg, #0f0f0f 0%, #223c6c 50%);
         transition: padding 400ms ease;
@@ -100,13 +103,6 @@
 
 @media (max-width: 575px) {
     .header {
-        &__navbar {
-            position: relative;
-            justify-content: center;
-            align-items: center;
-
-        }
-
         &__menu {
             display: none;
         }

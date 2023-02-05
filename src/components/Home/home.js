@@ -1,5 +1,4 @@
 import React from "react";
-import Auxx from "../../hoc/Auxx";
 import "../Header/Header";
 import Banner from "../Banner/Banner";
 import SimpleSlider from "../Slider/SimpleSlider";
@@ -9,18 +8,20 @@ import SliderFooter from "../SliderFooter/sliderfooter";
 import CrizalWrapper from "../CrizalWrapper/CrizalWrapper";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import { useEffect } from "react";
 const Home = (props) => {
     const {
         handleSideDrawer,
-        show
     } = props;
-    console.log("backdropdisplay", show);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
-        <Auxx>
-            {/* <Sidedrawer clicked={(e) => showingTrueHandler(e)} showingsidedrawer={showsidedrawer} show={backdropdisplay} clickedbackdrop={(e) => notshowingSidedrawer(e)} ></Sidedrawer> */}
-            {/* <Header clicked={props.clicked} clickedbackdrop={props.clickedbackdrop} showingsidedrawer={props.showingSidedrawer}></Header>  */}
+        <>
             <Header clicked={props.clicked} clickedbackdrop={props.clickedbackdrop} handleSideDrawer={() => handleSideDrawer()}></Header>
-            <Banner show={props.show}></Banner>
+            <Banner></Banner>
             <CrizalWrapper></CrizalWrapper>
             <SimpleSlider></SimpleSlider>
             <SliderFooter></SliderFooter>
@@ -28,8 +29,8 @@ const Home = (props) => {
             <FramesLogosSection />
             <Footer></Footer>
 
+        </>
 
-        </Auxx>
     )
 
 

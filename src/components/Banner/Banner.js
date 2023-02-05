@@ -10,7 +10,7 @@ const Banner = (props) => {
         )
     })
     return (
-        <div className={`Banner ${props.show ? "d-none" : ""}`} >
+        <div className="Banner" >
             <div className="overlay-banner">
             </div>
             <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
